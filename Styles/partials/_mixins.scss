@@ -1,0 +1,16 @@
+
+@use 'variables' as v;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-shadow {
+  box-shadow: v.$box-shadow;
+}
+
+@mixin regular-borders {
+  border-radius: 5px;
+}

@@ -1,0 +1,46 @@
+
+@use "mixins" as m;
+@use "variables" as v;
+
+#apps {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  @include m.box-shadow;
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  width: v.$app-width;
+  height: v.$app-height;
+  display: flex;
+  flex-direction: column;
+
+  .app-header {
+    background: v.$taskbar-color;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .app-content {
+    flex: 1;
+    padding: 10px;
+    @include m.flex-center;
+    flex-direction: column;
+  }
+
+  .close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

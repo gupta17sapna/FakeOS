@@ -1,0 +1,35 @@
+
+@use "mixins" as m;
+@use "variables" as v;
+
+.calculator {
+  width: v.$app-width;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+
+  .calc-btn {
+    @include m.regular-borders;
+    background-color: v.$main-grey;
+    padding: 4px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    color: blue;
+
+    &.--operator {
+      color: red;
+    }
+  }
+
+  .output {
+    width: 100%;
+    background-color: white;
+    text-align: right;
+    padding: 10px;
+    font-size: 24px;
+  }
+}

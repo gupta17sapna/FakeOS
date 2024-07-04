@@ -1,0 +1,37 @@
+
+@use "variables" as v;
+@use "mixins" as m;
+
+#taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: v.$taskbar-height;
+  background-color: v.$taskbar-color;
+  @include m.flex-center;
+  justify-content: space-between;
+  padding: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+
+  #startButton {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin-left: 0;
+      padding: 0;
+      
+
+    img {
+      height: 45px; 
+      width: auto;
+                }
+  }
+
+  #time {
+    color: white;
+    font-size: 16px;
+    margin-right: 20px; 
+  }
+}
+

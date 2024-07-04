@@ -1,0 +1,25 @@
+// style.scss
+@use './partials/variables';
+@use './partials/mixins';
+@use './partials/base';
+@use './partials/icons';
+@use './partials/apps';
+@use './partials/taskbar';
+@use './partials/calculator';
+@use './partials/modal';
+@use './partials/menu';
+@use './partials/mediaPlayer';
+
+@media (max-width: 768px) {
+  #taskbar {
+    height: 50px;
+  }
+
+  #startButton img {
+    height: 35px;
+  }
+
+  #time {
+    font-size: 14px;
+  }
+}

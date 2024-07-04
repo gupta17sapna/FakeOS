@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeOS WindowsXP</title>
+    <link rel="stylesheet" href="./Styles/style.css">
+    <script type= "module" src="./Scripts/script.js" ></script>
+</head>
+<body>
+    <div id="wallpaper">
+        <div id="left-icons">
+            <div class="icon" data-app="fileExplorer"><img src="./Images/My Computer.png" alt="My Computer"><span>My Computer</span></div>
+            <div class="icon" data-app="recycleBin"><img src="./Images/Recycle Bin (full).png" alt="Recycle Bin"><span>Recycle Bin</span></div>
+            <div class="icon" data-app="myDocuments"><img src="./Images/My Documents.png" alt="My Documents"><span>My Documents</span></div>
+            <div class="icon" data-app="internetExplorer"><img src="./Images/internet explorer.png" alt="Internet Explorer"><span>Internet Explorer</span></div>
+        </div>
+        <div id="right-icons">
+            <div class="icon" data-app="controlPanel"><img src="./Images/Control Panel.png" alt="Control Panel"><span>Control Panel</span></div>
+            <div class="icon" data-app="notepad"><img src="./Images/notepad.png" alt="Notepad"><span>Notepad</span></div>
+            <div class="icon" data-app="mediaPlayer"><img src="./Images/Windows-Media.png" alt="Media Player"><span>Media Player</span></div>
+            <div class="icon" data-app="calculator"><img src="./Images/Calculator_WinXP.png" alt="Calculator"><span>Calculator</span></div>
+        </div>
+        <div id="modal" class="hidden" style="display: none;">
+            <div id="modal-overlay"></div>
+            <div id="modal-content">
+                <div class="app-header">
+                    <span id="modal-title"></span>
+                    <button id="close-modal">X</button>
+                </div>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="taskbar">
+        <div id="startButton"><img src="./Images/startnew.png" alt="Start"></div>
+        <div id="time"></div>
+    </div>
+    <div id="startMenu" class="hidden" style="display: none;">
+        <div class="start-menu-header">Sapna Computer</div>
+        <div class="start-menu-content">
+        <ul class="start-menu-list">
+            <li> Internet Explorer</li>
+            <li> E-mail</li>
+            <li> MSN Messenger Service</li>
+            <li> Paint</li>
+            <li> WordPad</li>
+            <li> Calculator</li>
+            <li> All Programs</li>
+        </ul>
+        <div class="start-menu-right">
+            <ul>
+                <li>My Documents</li>
+                <li>My Pictures</li>
+                <li>My Music</li>
+                <li>My Computer</li>
+                <li>My Network Places</li>
+                <li>Control Panel</li>
+                <li>Help and Support</li>
+                <li>Search</li>
+                <li>Run</li>
+            </ul>
+        </div>
+    </div>
+    <div class="start-menu-border"></div> 
+        <div class="start-menu-footer">
+            <button>Log Off</button>
+            <button>Turn Off Computer</button>
+        </div>
+        <div id="mediaPlayerModal" class="modal hidden" style="display: none;">
+            <div class="media-player-header">
+                <button id="close-media-player">X</button>
+            </div>
+            <div class="media-player-body">
+                <video id="videoPlayer" width="320" height="240" controls>
+                    <source src="./media/hark-the-herald-angels-sing-traditional-english-christmas-carol-178364.mp3" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="media-player-controls">
+                    <button id="playButton">Play</button>
+                    <button id="pauseButton">Pause</button>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>
