@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const fileDropdown = document.getElementById('fileDropdown');
       const saveFile = document.getElementById('saveFile');
 
-      // Function to update the status bar with the current line and column
+    
       const updateStatusBar = () => {
           const text = textarea.value.substr(0, textarea.selectionStart);
           const lines = text.split("\n");
@@ -45,19 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
       textarea.addEventListener('input', updateStatusBar);
       textarea.addEventListener('keyup', updateStatusBar);
 
-      // Close notepad
+      
       closeButton.addEventListener('click', () => {
           notepadModal.classList.add('hidden');
           notepadModal.style.display = 'none';
       });
 
-      // Toggle file menu dropdown
+      
       fileMenu.addEventListener('click', (event) => {
           fileDropdown.classList.toggle('hidden');
-          event.stopPropagation(); // Prevent closing immediately
+          event.stopPropagation(); 
       });
 
-      // Save file function
+      
       saveFile.addEventListener('click', () => {
           const blob = new Blob([textarea.value], { type: 'text/plain' });
           const a = document.createElement('a');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
-          fileDropdown.classList.add('hidden'); // Close the dropdown after saving
+          fileDropdown.classList.add('hidden'); 
       });
 
       // Close file menu dropdown if clicking outside
