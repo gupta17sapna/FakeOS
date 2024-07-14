@@ -12,9 +12,14 @@ html, body {
 
 
 #wallpaper {
-  background-image: url('../Images/another.jpg');
+   background: url('../../Images/another.jpg') no-repeat center center fixed;
   background-size: cover;
-  background-position: center center;
-  height: calc(100vh - 40px); 
-  position: relative;
-}
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  }
+  
+ 
+  
+

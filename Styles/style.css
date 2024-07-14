@@ -8,11 +8,12 @@ html, body {
 }
 
 #wallpaper {
-  background-image: url("../Images/another.jpg");
+  background: url("../../Images/another.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-position: center center;
-  height: calc(100vh - 40px);
-  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 #left-icons, #right-icons {
@@ -177,6 +178,8 @@ html, body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  width: 600px;
+  height: 360px;
 }
 
 #modal-overlay {
@@ -303,54 +306,268 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: #ececec;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+  width: 600px;
+  height: 400px;
+}
+#mediaPlayerModal.hidden {
+  display: none;
+}
+#mediaPlayerModal .media-player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: #0078d7;
+  color: white;
+}
+#mediaPlayerModal .media-player-header .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+#mediaPlayerModal .media-player-header button {
+  background: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+#mediaPlayerModal .media-player-body {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+}
+#mediaPlayerModal .media-player-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  background: #f0f0f0;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+}
+#mediaPlayerModal .media-player-sidebar .sidebar-item {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#mediaPlayerModal .media-player-sidebar .sidebar-item:hover {
+  background: #e0e0e0;
+}
+#mediaPlayerModal .media-player-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px;
+}
+#mediaPlayerModal .media-player-main .media-player-display {
+  flex-grow: 1;
+  background: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mediaPlayerModal .media-player-main .media-player-display video {
+  max-width: 100%;
+  max-height: 100%;
+}
+#mediaPlayerModal .media-player-main .media-player-controls {
+  display: flex;
+  justify-content: center;
+  background: #0078d7;
+  padding: 10px;
+}
+#mediaPlayerModal .media-player-main .media-player-controls .control-button {
+  background: #0078d7;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+#mediaPlayerModal .media-player-main .media-player-controls .control-button:hover {
+  background: #005bb5;
+}
+
+#notepadModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1001;
   display: none;
   flex-direction: column;
+  width: 600px;
+  height: 360px;
 }
-#mediaPlayerModal.hidden {
+#notepadModal.hidden {
   display: none;
 }
-#mediaPlayerModal #mediaPlayerOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-#mediaPlayerModal #mediaPlayerContent {
-  display: flex;
-  flex-direction: column;
-  background: #333;
-  color: #fff;
-}
-#mediaPlayerModal #mediaPlayerHeader {
+#notepadModal #notepad-header {
+  background-color: #0078d7;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background: #444;
+  padding: 5px 10px;
+  font-weight: bold;
 }
-#mediaPlayerModal #mediaPlayerBody {
+#notepadModal #notepad-header button {
+  background-color: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+#notepadModal #notepad-menu {
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+}
+#notepadModal #notepad-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+#notepadModal #notepad-menu ul li {
+  padding: 5px 10px;
+  cursor: pointer;
+  position: relative;
+}
+#notepadModal #notepad-menu ul li:hover {
+  background-color: #ddd;
+}
+#notepadModal #notepad-menu ul li:hover ul {
+  display: block;
+}
+#notepadModal #notepad-menu ul li ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100px;
+}
+#notepadModal #notepad-menu ul li ul li {
+  padding: 5px;
+}
+#notepadModal #notepad-textarea {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  resize: none;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 14px;
+}
+#notepadModal #notepad-status-bar {
+  background-color: #f1f1f1;
+  border-top: 1px solid #ccc;
+  padding: 2px 5px;
+  font-size: 12px;
+  text-align: right;
+}
+
+#myPicturesModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 600px;
+  overflow: hidden;
+}
+#myPicturesModal.hidden {
+  display: none;
+}
+
+#myPicturesHeader {
+  background-color: #0078d7;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+#myPicturesHeader button {
+  background-color: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+
+#myPicturesContent {
+  flex-grow: 1;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow: auto;
 }
-#mediaPlayerModal #playButton, #mediaPlayerModal #pauseButton {
-  margin-top: 10px;
-  background: #0078d7;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
+#myPicturesContent #thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#myPicturesContent #thumbnails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
   cursor: pointer;
 }
-#mediaPlayerModal #playButton:hover, #mediaPlayerModal #pauseButton:hover {
-  background: #005bb5;
+#myPicturesContent .carousel {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  flex-grow: 1;
+}
+#myPicturesContent .carousel.hidden {
+  display: none;
+}
+#myPicturesContent .carousel .carousel-images {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+#myPicturesContent .carousel .carousel-images img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+#myPicturesContent .carousel .carousel-control {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
