@@ -1,7 +1,9 @@
 # FakeOS WindowsXP Project
 
 Welcome to the FakeOS WindowsXP project! This project is a simulation of the Windows XP desktop environment, complete with various desktop icons, a start menu, and functional applications like Notepad and Media Player.
+![FakeOS Screenshot](./Images/screenshot.png)
 
+https://fakeos-gupta17sapnas-projects.vercel.app/
 ## Table of Contents
 - Introduction
 - Features

@@ -9,8 +9,8 @@
   z-index: 1001;
   display: none;
   flex-direction: column;
-  width: 600px;  // Adjusted width
-  height: 400px;  // Adjusted height
+  width: 600px; 
+  height: 400px;  
 
   &.hidden {
       display: none;
@@ -18,14 +18,14 @@
 
   .media-player-header {
       display: flex;
-      justify-content: space-between;  // Changed to space-between to accommodate title and close button
+      justify-content: space-between;  
       align-items: center;
       padding: 5px;
       background: #0078d7;
       color: white;
 
       .title {
-          font-size: 16px;  // Adjusted font size
+          font-size: 16px; 
           font-weight: bold;
       }
 
@@ -49,7 +49,7 @@
   .media-player-sidebar {
       display: flex;
       flex-direction: column;
-      width: 150px;  // Adjusted width
+      width: 150px;  
       background: #f0f0f0;
       border-right: 1px solid #ccc;
       padding: 10px;

@@ -56,6 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
   closeMediaPlayerButton.addEventListener('click', () => {
       mediaPlayerModal.classList.add('hidden');
       mediaPlayerModal.style.display = 'none';
-      pauseTrack(); // Ensure the track is paused when the modal is closed
+      pauseTrack();
   });
 });

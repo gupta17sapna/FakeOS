@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderImage();
         thumbnailsContainer.classList.add('hidden');
         carouselContainer.classList.remove('hidden');
-        carouselContainer.style.display = 'flex';  // Ensure carousel is displayed
+        carouselContainer.style.display = 'flex';  
     };
 
     // Function to open My Pictures (thumbnail view)
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderThumbnails();
         thumbnailsContainer.classList.remove('hidden');
         carouselContainer.classList.add('hidden');
-        carouselContainer.style.display = 'none';  // Ensure carousel is hidden initially
+        carouselContainer.style.display = 'none';  
         myPicturesModal.classList.remove('hidden');
         myPicturesModal.style.display = 'flex';
     };
